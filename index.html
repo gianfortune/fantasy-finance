@@ -4,9 +4,12 @@
     <title>Fantasy Fiance - Marisa Gianfortune</title>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="js/financeController.js"></script>
     <script src="bower_components/chart.js/dist/Chart.min.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <script src="js/financeController.js"></script>
+    <script src="js/moneychartcontroller.js"></script>
+
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -21,13 +24,16 @@
         Welcome to Fantasy Finance
       </div>
     </div>
-    hello world
-    <input type="text" ng-model="finCtrl.yourName" placeholder="Enter a name here">
-    <h1>Hello {{finCtrl.yourName}}!</h1>
-    <canvas id="line" class="chart chart-line" chart-data="data"
-chart-labels="labels" chart-series="series" chart-options="options"
-chart-dataset-override="datasetOverride" chart-click="onClick">
-</canvas
+    <div class="row chart-row">
+      <div class="col-md-12">
+        <div class="chart-header">
+          Title
+        </div>
+        <money-chart data="finCtrl.data"></money-chart>
+      </div>
+    </div>
+
+
   </div>
 
   </body>
