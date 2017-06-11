@@ -1,0 +1,17 @@
+.header-background {
+  background-image: url("../assets/mountain_background.jpeg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-background__message {
+  font-weight: bold;
+  font-size: 200%;
+  color: white;
+}

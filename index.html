@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="financeApp">
+  <head>
+    <title>Fantasy Fiance - Marisa Gianfortune</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/financeController.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+  <div class="container-fluid" ng-controller="financeController as finCtrl" ng-cloak>
+
+    <div class="row header-background">
+      <div class="header-background__message">
+        Welcome to Fantasy Finance
+      </div>
+    </div>
+    hello world
+    <input type="text" ng-model="finCtrl.yourName" placeholder="Enter a name here">
+    <h1>Hello {{finCtrl.yourName}}!</h1>
+
+  </div>
+
+  </body>
+</html>
