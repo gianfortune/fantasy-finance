@@ -17,6 +17,56 @@ body {
 
 .header-background__message {
   font-weight: bold;
-  font-size: 200%;
+  font-size: 3em;
   color: white;
+}
+
+.chart-header {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.4em;
+  font-weight: 200;
+}
+
+.chart-row {
+  padding: 20px;
+}
+
+.chart-container {
+  height: 300px;
+}
+
+.nav-bar {
+  background-color: rgba(222, 225, 226, 0.5);
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-bar__elem{
+  font-size: 1.3em;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar__elem a {
+    color: white;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar__elem:hover a{
+  background-color: rgba(91, 101, 102, 0.4);
+  text-decoration: none;
+}
+
+.nav-bar__elem--right {
+  margin-left: auto;
 }
