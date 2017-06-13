@@ -3,6 +3,7 @@ function moneyChartController($interval) {
 
   ctrl.height_chart = window.innerHeight*0.7;
   ctrl.paused = false;
+  ctrl.collapsed = false;
   ctrl.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
   ctrl.options = {
     responsive: true,
@@ -34,6 +35,12 @@ function moneyChartController($interval) {
 
   ctrl.pauseGraph = function () {
     ctrl.paused = !ctrl.paused
+  }
+
+  ctrl.collapseGraph = function () {
+    ctrl.paused = !ctrl.paused
+    ctrl.collapsed = !ctrl.collapsed
+    console.log(ctrl.collapsed)
   }
 
   ctrl.updateGraphData = function () {

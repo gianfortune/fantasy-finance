@@ -12,10 +12,17 @@
           Resume <i class="fa fa-play" aria-hidden="true"></i>
         </span>
       </button>
-      <button type="button" class="btn btn-primary">Collapse <i class="fa fa-compress" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-primary" ng-click="$ctrl.collapseGraph()">
+        <span ng-if="!$ctrl.collapsed">
+          Collapse <i class="fa fa-compress" aria-hidden="true"></i>
+        </span>
+        <span ng-if="$ctrl.collapsed">
+          Expand <i class="fa fa-expand" aria-hidden="true"></i>
+        </span>
+      </button>
     </div>
   </div>
-  <div class="chart-container">
+  <div class="chart-container animate-show-hide" ng-hide="$ctrl.collapsed">
     <canvas class="chart chart-line" chart-data="$ctrl.currencyObject.data"
       chart-labels="$ctrl.currencyObject.labels" chart-series="$ctrl.currencyObject.series" chart-options="$ctrl.options"
       chart-dataset-override="$ctrl.datasetOverride" chart-click="$ctrl.onClick">

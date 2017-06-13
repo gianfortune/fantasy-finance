@@ -28,6 +28,7 @@ body {
   padding: 20px 5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .chart-row {
@@ -42,7 +43,7 @@ body {
   background-color: rgba(222, 225, 226, 0.2);
   margin: 20px 10px;
   border: solid 1px rgba(222, 225, 226, 0.4);
-  border-radius: 3px
+  border-radius: 3px;
 }
 
 .money-chart-container--paused {
@@ -84,4 +85,14 @@ body {
 
 .nav-bar__elem--right {
   margin-left: auto;
+}
+
+.animate-show-hide.ng-hide {
+  height: 0;
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all ease-in 0.3s;
 }

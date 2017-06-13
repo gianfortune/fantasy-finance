@@ -1,4 +1,4 @@
-angular.module('financeApp', ['chart.js'])
+angular.module('financeApp', ['chart.js', 'ngAnimate'])
   .controller('financeController', function($interval) {
     var parent = this;
     parent.dataCurrencies = [{
