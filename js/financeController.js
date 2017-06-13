@@ -1,17 +1,17 @@
-angular.module('financeApp', ['chart.js'])
+angular.module('financeApp', ['chart.js', 'ngAnimate'])
   .controller('financeController', function($interval) {
     var parent = this;
     parent.dataCurrencies = [{
       fantasyMoney: 'Galactic Standard Credits',
       fantasyType: "Star Wars",
       data: [],
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       series: ['GSC', 'USD']
     }, {
       fantasyMoney: 'Munny',
       fantasyType: "Kingdom Hearts",
       data: [],
-      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September"],
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       series: ['MU', 'USD']
     }]
 

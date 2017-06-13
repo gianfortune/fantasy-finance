@@ -5,6 +5,7 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
 
     <script src="js/financeController.js"></script>
@@ -12,6 +13,7 @@
 
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   </head>
   <body>
@@ -20,7 +22,7 @@
         <a href="#">Home</a>
       </div>
       <div class="nav-bar__elem nav-bar__elem--right">
-        <a href="gianfortune.com">About the Author</a>
+        <a href="http://gianfortune.com">About the Author</a>
       </div>
     </div>
     <div class="container-fluid" ng-controller="financeController as finCtrl" ng-cloak>
@@ -31,9 +33,6 @@
       </div>
       <div class="row chart-row">
         <div class="col-md-12" ng-repeat="dataCurrency in finCtrl.dataCurrencies">
-          <div class="chart-header">
-            USD versus {{dataCurrency.fantasyMoney}} ({{dataCurrency.fantasyMoney}})
-          </div>
           <money-chart currency-object="dataCurrency"></money-chart>
         </div>
       </div>
