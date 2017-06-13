@@ -1,11 +1,13 @@
 function moneyChartController($interval) {
   var ctrl = this;
-  
+
   ctrl.height_chart = window.innerHeight*0.7;
+  ctrl.paused = false;
   ctrl.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
   ctrl.options = {
     responsive: true,
     maintainAspectRatio: false,
+    animation : false,
     scales: {
       yAxes: [
         {
@@ -24,7 +26,15 @@ function moneyChartController($interval) {
     }
   };
 
-  $interval( function(){ ctrl.updateGraphData(); }, 2000)
+  $interval( function(){
+    if (!ctrl.paused) {
+      ctrl.updateGraphData();
+    }
+  }, 2000)
+
+  ctrl.pauseGraph = function () {
+    ctrl.paused = !ctrl.paused
+  }
 
   ctrl.updateGraphData = function () {
     ctrl.currencyObject.data.forEach(function(row){
@@ -32,6 +42,8 @@ function moneyChartController($interval) {
       row.push(newData)
       row.shift()
     })
+    ctrl.currencyObject.labels.push(ctrl.currencyObject.labels[0])
+    ctrl.currencyObject.labels.shift()
   }
 }
 

@@ -1,7 +1,24 @@
-
-<div class="chart-container">
-  <canvas class="chart chart-line" chart-data="$ctrl.currencyObject.data"
-    chart-labels="$ctrl.currencyObject.labels" chart-series="$ctrl.currencyObject.series" chart-options="$ctrl.options"
-    chart-dataset-override="$ctrl.datasetOverride" chart-click="$ctrl.onClick">
-  </canvas>
+<div class="money-chart-container" ng-class="$ctrl.paused ? 'money-chart-container--paused' : ''">
+  <div class="chart-header">
+    <div class="chart-header__title">
+      USD versus {{$ctrl.currencyObject.fantasyMoney}} ({{$ctrl.currencyObject.fantasyType}})
+    </div>
+    <div class="btn-group" role="group" aria-label="Chart Header Toolbar">
+      <button type="button" class="btn btn-primary" ng-click="$ctrl.pauseGraph()">
+        <span ng-if="!$ctrl.paused">
+          Pause <i class="fa fa-pause" aria-hidden="true"></i>
+        </span>
+        <span ng-if="$ctrl.paused">
+          Resume <i class="fa fa-play" aria-hidden="true"></i>
+        </span>
+      </button>
+      <button type="button" class="btn btn-primary">Collapse <i class="fa fa-compress" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="chart-container">
+    <canvas class="chart chart-line" chart-data="$ctrl.currencyObject.data"
+      chart-labels="$ctrl.currencyObject.labels" chart-series="$ctrl.currencyObject.series" chart-options="$ctrl.options"
+      chart-dataset-override="$ctrl.datasetOverride" chart-click="$ctrl.onClick">
+    </canvas>
+  </div>
 </div>

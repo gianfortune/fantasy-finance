@@ -5,13 +5,13 @@ angular.module('financeApp', ['chart.js'])
       fantasyMoney: 'Galactic Standard Credits',
       fantasyType: "Star Wars",
       data: [],
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       series: ['GSC', 'USD']
     }, {
       fantasyMoney: 'Munny',
       fantasyType: "Kingdom Hearts",
       data: [],
-      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September"],
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       series: ['MU', 'USD']
     }]
 
