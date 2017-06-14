@@ -47,7 +47,7 @@
       </div>
       <div class="row chart-row">
         <div class="col-md-12" ng-repeat="dataCurrency in finCtrl.dataCurrencies">
-          <money-chart currency-object="dataCurrency"></money-chart>
+          <money-chart currency-object="dataCurrency" on-update-graph-data="finCtrl.updateGraphData(currencyObject)"></money-chart>
         </div>
       </div>
     </div>

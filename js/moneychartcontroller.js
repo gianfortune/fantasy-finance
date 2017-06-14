@@ -36,7 +36,7 @@ function moneyChartController ($interval) {
   // Calls the updateGraphData function on an interval, checking for new information
   $interval(function () {
     if (!ctrl.paused) {
-      ctrl.updateGraphData()
+      ctrl.callUpdateGraph()
     }
   }, 2000)
 
@@ -47,20 +47,17 @@ function moneyChartController ($interval) {
 
   // Sets graph state for paused (BOOLEAN) and collapsed (BOOLEAN)
   ctrl.collapseGraph = function () {
-    ctrl.paused = !ctrl.paused
     ctrl.collapsed = !ctrl.collapsed
-    console.log(ctrl.collapsed)
+    if(ctrl.collapsed) {
+      ctrl.paused = true
+    } else {
+      ctrl.paused = false
+    }
   }
 
-  // Updates the graph data with new numbers
-  ctrl.updateGraphData = function () {
-    ctrl.currencyObject.data.forEach(function (row) {
-      var newData = Math.floor((Math.random() * 100) + 1)
-      row.push(newData)
-      row.shift()
-    })
-    ctrl.currencyObject.labels.push(ctrl.currencyObject.labels[0])
-    ctrl.currencyObject.labels.shift()
+  // Calls updateGraphData from parent class
+  ctrl.callUpdateGraph = function () {
+    ctrl.onUpdateGraphData({currencyObject: ctrl.currencyObject})
   }
 }
 
@@ -68,6 +65,7 @@ angular.module('financeApp').component('moneyChart', {
   templateUrl: 'html/moneyChart.html',
   controller: moneyChartController,
   bindings: {
-    currencyObject: '<'
+    currencyObject: '<',
+    onUpdateGraphData: '&'
   }
 })

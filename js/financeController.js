@@ -41,4 +41,15 @@ angular.module('financeApp', ['chart.js', 'ngAnimate'])
       }
       return dataArray
     }
+
+    // Updates the graph data with new numbers
+    parent.updateGraphData = function (currencyObject) {
+      currencyObject.data.forEach(function (row) {
+        var newData = Math.floor((Math.random() * 100) + 1)
+        row.push(newData)
+        row.shift()
+      })
+      currencyObject.labels.push(currencyObject.labels[0])
+      currencyObject.labels.shift()
+    }
   })
