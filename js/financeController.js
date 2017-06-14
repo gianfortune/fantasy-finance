@@ -1,6 +1,8 @@
 angular.module('financeApp', ['chart.js', 'ngAnimate'])
   .controller('financeController', function ($interval) {
     var parent = this
+
+    // Sets the data dependencies, in a real App this would be taken from the backend
     parent.dataCurrencies = [{
       fantasyMoney: 'Galactic Standard Credits',
       fantasyType: 'Star Wars',
@@ -15,10 +17,12 @@ angular.module('financeApp', ['chart.js', 'ngAnimate'])
       series: ['MU', 'USD']
     }]
 
+    // Starts the app by calling fetchData()
     parent.$onInit = function () {
       parent.fetchData()
     }
 
+    // Creates randomized data sets for the graphs to use
     parent.fetchData = function () {
       parent.dataCurrencies.forEach(function (currencyInfo) {
         for (var i = 0; i < currencyInfo.series.length; i++) {
@@ -28,6 +32,7 @@ angular.module('financeApp', ['chart.js', 'ngAnimate'])
       })
     }
 
+    // Creates a random data array from 1 to 100
     parent.makeRandom100 = function (length) {
       let dataArray = []
       for (var i = 0; i < length; i++) {
