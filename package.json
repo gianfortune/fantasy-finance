@@ -6,8 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "bower": "^1.8.0",
-    "http-server": "^0.10.0",
-    "serve-static": "^1.12.3"
+    "http-server": "^0.10.0"
   },
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install",
